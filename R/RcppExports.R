@@ -12,7 +12,7 @@
 #' @return Returns a vector with result of \code{ kron(Sigma, diag(n)) \% y }
 #' @keywords internal
 fastKronEye_Y <- function(Sigma, Y, n, J) {
-    .Call('_test_fastKronEye_Y', PACKAGE = 'test', Sigma, Y, n, J)
+    .Call('_surbayes_fastKronEye_Y', PACKAGE = 'surbayes', Sigma, Y, n, J)
 }
 
 #' Fast kronecker product of crossproduct matrix
@@ -28,7 +28,7 @@ fastKronEye_Y <- function(Sigma, Y, n, J) {
 #' @keywords internal
 #' @return \code{matrix} result of \eqn{X' (\Sigma \otimes I_n) X}
 fastKronEye_crossprod <- function(XtX, Sigma, pvec, n, J) {
-    .Call('_test_fastKronEye_crossprod', PACKAGE = 'test', XtX, Sigma, pvec, n, J)
+    .Call('_surbayes_fastKronEye_crossprod', PACKAGE = 'surbayes', XtX, Sigma, pvec, n, J)
 }
 
 #' Get one sample from predictive posterior of SUR
@@ -41,7 +41,7 @@ fastKronEye_crossprod <- function(XtX, Sigma, pvec, n, J) {
 #' @param n number of observations
 #' @param J number of endpoints
 predict_surbayes_helper <- function(mu, Sigma, n, J) {
-    .Call('_test_predict_surbayes_helper', PACKAGE = 'test', mu, Sigma, n, J)
+    .Call('_surbayes_predict_surbayes_helper', PACKAGE = 'surbayes', mu, Sigma, n, J)
 }
 
 #' Sample from predictive posterior density C++ helper
@@ -54,7 +54,7 @@ predict_surbayes_helper <- function(mu, Sigma, n, J) {
 #' @param J number of endpoints
 #' @param nsims Number of simulations (number of rows in Mu)
 predict_surbayes_cpp <- function(Mu, Sigmalist, n, J, nsims) {
-    .Call('_test_predict_surbayes_cpp', PACKAGE = 'test', Mu, Sigmalist, n, J, nsims)
+    .Call('_surbayes_predict_surbayes_cpp', PACKAGE = 'surbayes', Mu, Sigmalist, n, J, nsims)
 }
 
 #' Sample Sigma via Gibbs for SUR model
@@ -66,7 +66,7 @@ predict_surbayes_cpp <- function(Mu, Sigmalist, n, J, nsims) {
 #' @param p dimension of covariance matrix
 #' @return sampled covariance matrix
 sample_sigma <- function(nu, V, p) {
-    .Call('_test_sample_sigma', PACKAGE = 'test', nu, V, p)
+    .Call('_surbayes_sample_sigma', PACKAGE = 'surbayes', nu, V, p)
 }
 
 #' Power Prior Gibbs sampling
@@ -89,7 +89,7 @@ sample_sigma <- function(nu, V, p) {
 #' @param thin Thin parameter
 #' @return sampled covariance matrix
 sur_sample_gibbs_cpp <- function(Sigma, M, X, X0, XtX, X0tX0, Y, Y0, y, y0, a0, pvec, burnin, thin) {
-    .Call('_test_sur_sample_gibbs_cpp', PACKAGE = 'test', Sigma, M, X, X0, XtX, X0tX0, Y, Y0, y, y0, a0, pvec, burnin, thin)
+    .Call('_surbayes_sur_sample_gibbs_cpp', PACKAGE = 'surbayes', Sigma, M, X, X0, XtX, X0tX0, Y, Y0, y, y0, a0, pvec, burnin, thin)
 }
 
 #' Helper function to sample covariance
@@ -105,7 +105,7 @@ sur_sample_gibbs_cpp <- function(Sigma, M, X, X0, XtX, X0tX0, Y, Y0, y, y0, a0, 
 #' @param sigma11 A scalar giving a draw for the (1,1) component of the covariance matrix
 #' @param r1 A \code{vector} of residuals for the first endpoint's regression
 sur_sample_cov_helper_cpp <- function(Y, Xlist, n, J, pj, sigma11, r1) {
-    .Call('_test_sur_sample_cov_helper_cpp', PACKAGE = 'test', Y, Xlist, n, J, pj, sigma11, r1)
+    .Call('_surbayes_sur_sample_cov_helper_cpp', PACKAGE = 'surbayes', Y, Xlist, n, J, pj, sigma11, r1)
 }
 
 #' Sample from SUR via Direct Monte Carlo (C++ version)
@@ -121,6 +121,6 @@ sur_sample_cov_helper_cpp <- function(Y, Xlist, n, J, pj, sigma11, r1) {
 #' @param pj \code{vector} giving number of covariates per endpoint
 #' @param M An integer giving the number of desired samples
 sur_sample_cpp <- function(Y, Xlist, y, X, XtX, pj, M) {
-    .Call('_test_sur_sample_cpp', PACKAGE = 'test', Y, Xlist, y, X, XtX, pj, M)
+    .Call('_surbayes_sur_sample_cpp', PACKAGE = 'surbayes', Y, Xlist, y, X, XtX, pj, M)
 }
 

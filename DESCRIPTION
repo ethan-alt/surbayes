@@ -1,13 +1,11 @@
-Package: test
+Package: surbayes
 Type: Package
-Title: What the Package Does Using Title Case
-Version: 1.0
+Title: Bayesian Analysis of SUR Models
+Version: 0.1.0
 Date: 2020-04-17
-Author: Your Name
-Maintainer: Your Name <your@email.com>
-Description: More details about what the package does. See
-           <http://cran.r-project.org/doc/manuals/r-release/R-exts.html#The-DESCRIPTION-file> for
-           details on how to write this part.
+Author: Ethan Alt
+Maintainer: Ethan Alt <ethanalt@live.unc.edu>
+Description: Implementation of the direct Monte Carlo approach of Zellner and Ando (2010) to sample from posterior of SUR models. In addition, a Gibbs sampler is implemented that allows the user to analyze SUR models using the power prior.
 License: GPL (>= 2)
 Imports: Rcpp (>= 1.0.4.6),
          RcppArmadillo,
@@ -22,4 +20,6 @@ Collate:
     'sur_sample_powerprior.R'
     'sur_sample_dmc.R'
     'sur_sample.R'
-    'test.R'
+    'surbayes-package.R'
+URL: https://github.com/ethan-alt/surbayes
+BugReports: https://github.com/ethan-alt/surbayes/issues

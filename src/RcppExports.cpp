@@ -8,7 +8,7 @@ using namespace Rcpp;
 
 // fastKronEye_Y
 arma::vec fastKronEye_Y(arma::mat const& Sigma, arma::mat const& Y, int const& n, int const& J);
-RcppExport SEXP _test_fastKronEye_Y(SEXP SigmaSEXP, SEXP YSEXP, SEXP nSEXP, SEXP JSEXP) {
+RcppExport SEXP _surbayes_fastKronEye_Y(SEXP SigmaSEXP, SEXP YSEXP, SEXP nSEXP, SEXP JSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -22,7 +22,7 @@ END_RCPP
 }
 // fastKronEye_crossprod
 arma::mat fastKronEye_crossprod(arma::mat const& XtX, arma::mat const& Sigma, arma::vec const& pvec, int const& n, int const& J);
-RcppExport SEXP _test_fastKronEye_crossprod(SEXP XtXSEXP, SEXP SigmaSEXP, SEXP pvecSEXP, SEXP nSEXP, SEXP JSEXP) {
+RcppExport SEXP _surbayes_fastKronEye_crossprod(SEXP XtXSEXP, SEXP SigmaSEXP, SEXP pvecSEXP, SEXP nSEXP, SEXP JSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -37,7 +37,7 @@ END_RCPP
 }
 // predict_surbayes_helper
 arma::mat predict_surbayes_helper(arma::vec const& mu, arma::mat const& Sigma, int const& n, int const& J);
-RcppExport SEXP _test_predict_surbayes_helper(SEXP muSEXP, SEXP SigmaSEXP, SEXP nSEXP, SEXP JSEXP) {
+RcppExport SEXP _surbayes_predict_surbayes_helper(SEXP muSEXP, SEXP SigmaSEXP, SEXP nSEXP, SEXP JSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -51,7 +51,7 @@ END_RCPP
 }
 // predict_surbayes_cpp
 arma::cube predict_surbayes_cpp(arma::mat const& Mu, List const& Sigmalist, int const& n, int const& J, int const& nsims);
-RcppExport SEXP _test_predict_surbayes_cpp(SEXP MuSEXP, SEXP SigmalistSEXP, SEXP nSEXP, SEXP JSEXP, SEXP nsimsSEXP) {
+RcppExport SEXP _surbayes_predict_surbayes_cpp(SEXP MuSEXP, SEXP SigmalistSEXP, SEXP nSEXP, SEXP JSEXP, SEXP nsimsSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -66,7 +66,7 @@ END_RCPP
 }
 // sample_sigma
 arma::mat sample_sigma(double const& nu, arma::mat const& V, int const& p);
-RcppExport SEXP _test_sample_sigma(SEXP nuSEXP, SEXP VSEXP, SEXP pSEXP) {
+RcppExport SEXP _surbayes_sample_sigma(SEXP nuSEXP, SEXP VSEXP, SEXP pSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -79,7 +79,7 @@ END_RCPP
 }
 // sur_sample_gibbs_cpp
 List sur_sample_gibbs_cpp(arma::mat Sigma, int const& M, arma::mat const& X, arma::mat const& X0, arma::mat const& XtX, arma::mat const& X0tX0, arma::mat const& Y, arma::mat const& Y0, arma::vec const& y, arma::vec const& y0, double const& a0, arma::vec const& pvec, int burnin, int thin);
-RcppExport SEXP _test_sur_sample_gibbs_cpp(SEXP SigmaSEXP, SEXP MSEXP, SEXP XSEXP, SEXP X0SEXP, SEXP XtXSEXP, SEXP X0tX0SEXP, SEXP YSEXP, SEXP Y0SEXP, SEXP ySEXP, SEXP y0SEXP, SEXP a0SEXP, SEXP pvecSEXP, SEXP burninSEXP, SEXP thinSEXP) {
+RcppExport SEXP _surbayes_sur_sample_gibbs_cpp(SEXP SigmaSEXP, SEXP MSEXP, SEXP XSEXP, SEXP X0SEXP, SEXP XtXSEXP, SEXP X0tX0SEXP, SEXP YSEXP, SEXP Y0SEXP, SEXP ySEXP, SEXP y0SEXP, SEXP a0SEXP, SEXP pvecSEXP, SEXP burninSEXP, SEXP thinSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -103,7 +103,7 @@ END_RCPP
 }
 // sur_sample_cov_helper_cpp
 arma::mat sur_sample_cov_helper_cpp(arma::mat const& Y, List const& Xlist, int const& n, int const& J, arma::vec const& pj, double const& sigma11, arma::vec const& r1);
-RcppExport SEXP _test_sur_sample_cov_helper_cpp(SEXP YSEXP, SEXP XlistSEXP, SEXP nSEXP, SEXP JSEXP, SEXP pjSEXP, SEXP sigma11SEXP, SEXP r1SEXP) {
+RcppExport SEXP _surbayes_sur_sample_cov_helper_cpp(SEXP YSEXP, SEXP XlistSEXP, SEXP nSEXP, SEXP JSEXP, SEXP pjSEXP, SEXP sigma11SEXP, SEXP r1SEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -120,7 +120,7 @@ END_RCPP
 }
 // sur_sample_cpp
 List sur_sample_cpp(arma::mat const& Y, List const& Xlist, arma::vec const& y, arma::mat const& X, arma::mat const& XtX, arma::vec const& pj, int const& M);
-RcppExport SEXP _test_sur_sample_cpp(SEXP YSEXP, SEXP XlistSEXP, SEXP ySEXP, SEXP XSEXP, SEXP XtXSEXP, SEXP pjSEXP, SEXP MSEXP) {
+RcppExport SEXP _surbayes_sur_sample_cpp(SEXP YSEXP, SEXP XlistSEXP, SEXP ySEXP, SEXP XSEXP, SEXP XtXSEXP, SEXP pjSEXP, SEXP MSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -137,18 +137,18 @@ END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
-    {"_test_fastKronEye_Y", (DL_FUNC) &_test_fastKronEye_Y, 4},
-    {"_test_fastKronEye_crossprod", (DL_FUNC) &_test_fastKronEye_crossprod, 5},
-    {"_test_predict_surbayes_helper", (DL_FUNC) &_test_predict_surbayes_helper, 4},
-    {"_test_predict_surbayes_cpp", (DL_FUNC) &_test_predict_surbayes_cpp, 5},
-    {"_test_sample_sigma", (DL_FUNC) &_test_sample_sigma, 3},
-    {"_test_sur_sample_gibbs_cpp", (DL_FUNC) &_test_sur_sample_gibbs_cpp, 14},
-    {"_test_sur_sample_cov_helper_cpp", (DL_FUNC) &_test_sur_sample_cov_helper_cpp, 7},
-    {"_test_sur_sample_cpp", (DL_FUNC) &_test_sur_sample_cpp, 7},
+    {"_surbayes_fastKronEye_Y", (DL_FUNC) &_surbayes_fastKronEye_Y, 4},
+    {"_surbayes_fastKronEye_crossprod", (DL_FUNC) &_surbayes_fastKronEye_crossprod, 5},
+    {"_surbayes_predict_surbayes_helper", (DL_FUNC) &_surbayes_predict_surbayes_helper, 4},
+    {"_surbayes_predict_surbayes_cpp", (DL_FUNC) &_surbayes_predict_surbayes_cpp, 5},
+    {"_surbayes_sample_sigma", (DL_FUNC) &_surbayes_sample_sigma, 3},
+    {"_surbayes_sur_sample_gibbs_cpp", (DL_FUNC) &_surbayes_sur_sample_gibbs_cpp, 14},
+    {"_surbayes_sur_sample_cov_helper_cpp", (DL_FUNC) &_surbayes_sur_sample_cov_helper_cpp, 7},
+    {"_surbayes_sur_sample_cpp", (DL_FUNC) &_surbayes_sur_sample_cpp, 7},
     {NULL, NULL, 0}
 };
 
-RcppExport void R_init_test(DllInfo *dll) {
+RcppExport void R_init_surbayes(DllInfo *dll) {
     R_registerRoutines(dll, NULL, CallEntries, NULL, NULL);
     R_useDynamicSymbols(dll, FALSE);
 }
