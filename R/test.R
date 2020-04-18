@@ -1,0 +1,4 @@
+#' @useDynLib test
+#' @importFrom Rcpp evalCpp
+#' @exportPattern "^[[:alpha:]]+"
+NULL
