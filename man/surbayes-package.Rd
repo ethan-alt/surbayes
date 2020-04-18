@@ -6,7 +6,7 @@
 \alias{surbayes-package}
 \title{surbayes: Bayesian Analysis of SUR Models}
 \description{
-This package implements the direct Monte Carlo approach of Zellner and Ando (2010) to sample from posterior of SUR models. In addition, a Gibbs sampler is implemented that allows the user to analyze SUR models using the power prior.
+Implementation of the direct Monte Carlo approach of Zellner and Ando (2010) to sample from posterior of SUR models. In addition, a Gibbs sampler is implemented that allows the user to analyze SUR models using the power prior.
 }
 \seealso{
 Useful links:
