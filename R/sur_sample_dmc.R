@@ -36,7 +36,6 @@
 #' out = sur_sample_powerprior( formula.list, data, histdata = data, M = M )
 #' 
 #' @import Rcpp
-#' @import RcppArmadillo
 #' @importFrom Matrix bdiag
 #' @importFrom rlist list.cbind
 #' @export
