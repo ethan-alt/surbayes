@@ -8,7 +8,6 @@ Maintainer: Ethan Alt <ethanalt@live.unc.edu>
 Description: Implementation of the direct Monte Carlo approach of Zellner and Ando (2010) to sample from posterior of SUR models. In addition, a Gibbs sampler is implemented that allows the user to analyze SUR models using the power prior.
 License: GPL (>= 2)
 Imports: Rcpp (>= 1.0.4.6),
-         RcppArmadillo,
          Matrix,
          rlist
 LinkingTo: Rcpp, RcppArmadillo
