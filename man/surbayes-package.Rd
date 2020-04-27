@@ -4,9 +4,14 @@
 \name{surbayes-package}
 \alias{surbayes}
 \alias{surbayes-package}
-\title{surbayes: Bayesian Analysis of SUR Models}
+\title{surbayes: Bayesian Analysis of Seemingly Unrelated Regression Models}
 \description{
-Implementation of the direct Monte Carlo approach of Zellner and Ando (2010) to sample from posterior of SUR models. In addition, a Gibbs sampler is implemented that allows the user to analyze SUR models using the power prior.
+Implementation of the direct Monte Carlo approach of 
+             Zellner and Ando (2010) <doi:10.1016/j.jeconom.2010.04.005>
+             to sample from posterior of 
+             Seemingly Unrelated Regression (SUR) models. In 
+             addition, a Gibbs sampler is implemented that allows 
+             the user to analyze SUR models using the power prior.
 }
 \seealso{
 Useful links:

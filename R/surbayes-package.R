@@ -1,6 +1,5 @@
 #' @useDynLib surbayes
 #' @importFrom Rcpp evalCpp
-#' @exportPattern "^[[:alpha:]]+"
 #' @keywords internal
 "_PACKAGE"
 
