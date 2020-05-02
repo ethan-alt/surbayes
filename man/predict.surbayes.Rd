@@ -51,7 +51,6 @@ formula.list = list(y1 ~ x1, y2 ~ x2 + x3)
 out = sur_sample( formula.list, data, M = M )
 
 ## Obtain predictions
-pred = predict.surbayes(out, data, nsims = 1)
-pred2 = predict(out, data, nsims = 1)
+pred = predict(out, data, nsims = 1)
 
 }

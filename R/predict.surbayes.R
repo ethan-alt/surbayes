@@ -39,8 +39,7 @@
 #' out = sur_sample( formula.list, data, M = M )
 #' 
 #' ## Obtain predictions
-#' pred = predict.surbayes(out, data, nsims = 1)
-#' pred2 = predict(out, data, nsims = 1)
+#' pred = predict(out, data, nsims = 1)
 #' 
 #' @export
 predict.surbayes <- function( object, newdata, nsims = 1, ... ) {
