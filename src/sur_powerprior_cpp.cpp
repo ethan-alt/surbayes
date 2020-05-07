@@ -108,8 +108,8 @@ List sur_sample_gibbs_cpp (
   int const& p = sum(pvec);
   
   // Create empty list, matrix, and list for results
-  int lastiter = M - (M % thin);                      // last iteration of sampler
-  int numstore = floor( (M - burnin) / thin );        // final num of samples after burn and thin
+  int lastiter = M - (M % thin);                            // last iteration of sampler
+  int numstore = (int) floor( 1.0 * (M - burnin) / thin );        // final num of samples after burn and thin
   
   arma::mat betasample(p, numstore, fill::zeros);
   List sigmalist(numstore);
