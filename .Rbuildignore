@@ -4,4 +4,7 @@
 ^CRAN-RELEASE$
 ^cran-comments\.md$
 ^\.travis\.yml$
+<<<<<<< HEAD
 ^README\.Rmd$
+=======
+>>>>>>> 7d051b5edaf7c91b389812438e4774368bb8f7c0
