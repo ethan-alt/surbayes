@@ -64,6 +64,3 @@ out_dmc = sur_sample( formula.list, data, M = M )            ## DMC used
 out_powerprior = sur_sample( formula.list, data, M, data )   ## Gibbs used
 #> Gibbs sampling used for power prior model
 ```
-
-In that case, don’t forget to commit and push the resulting figure
-files, so they display on GitHub\!
