@@ -2,6 +2,7 @@
 # surbayes
 
 <!-- badges: start -->
+[![Travis build status](https://travis-ci.com/ethan-alt/surbayes.svg?branch=master)](https://travis-ci.com/ethan-alt/surbayes)
 <!-- badges: end -->
 
 The goal of surbayes is to provide Bayesian SUR analysis quickly. The package has direct Monte Carlo implementation, which is much faster than Gibbs sampling. It also allows for the analysis of SUR models using power priors via Gibbs sampling.
