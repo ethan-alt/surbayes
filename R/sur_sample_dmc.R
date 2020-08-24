@@ -75,14 +75,12 @@ sur_sample_dmc <- function(
   
   ## Get names of predictors as j.xname as vector
   pvec <- sapply(Xlist, function(x) ncol(x))
-  Xnames <- c()
+  J <- length(formula.list)
+  Xnames <- lapply(formula.list, function(f, data) colnames(model.matrix(f, data)), data = data)
   for(i in 1:J) {
-    temp <- c()
-    if( attr(terms(formula.list[[i]]), "intercept") == 1 ) {
-      Xnames <- c( Xnames, paste0(i, '.', '(Intercept)') )
-    }
-    Xnames <- c( Xnames, paste0(i, '.', Xnames.list[[i]]) )
+    Xnames[[i]] <- paste0(i, '.', Xnames[[i]])
   }
+  Xnames <- unlist(Xnames)
   
   
   ## Call C++ function to sample beta, Sigma | y, X

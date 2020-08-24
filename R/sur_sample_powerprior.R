@@ -106,20 +106,17 @@ sur_sample_powerprior <- function(
   ## Obtain list of X's and extract names
   Xlist0 <- get_Xlist(formula.list, histdata)
   Xlist <- get_Xlist(formula.list, data)
-  Xnames.list <- lapply(formula.list, function(f) all.vars(f)[-1])  ## names of predictors
   ynames <- sapply(formula.list, function(f) all.vars(f)[1] )       ## names of responses
   
 
   ## Get names of predictors as j.xname as vector
   pvec <- sapply(Xlist, function(x) ncol(x))
-  Xnames <- c()
+  J <- length(formula.list)
+  Xnames <- lapply(formula.list, function(f, data) colnames(model.matrix(f, data)), data = data)
   for(i in 1:J) {
-    temp <- c()
-    if( attr(terms(formula.list[[i]]), "intercept") == 1 ) {
-      Xnames <- c( Xnames, paste0(i, '.', '(Intercept)') )
-    }
-    Xnames <- c( Xnames, paste0(i, '.', Xnames.list[[i]]) )
+    Xnames[[i]] <- paste0(i, '.', Xnames[[i]])
   }
+  Xnames <- unlist(Xnames)
   
   
   ## Get response matrix (Y1, ..., YJ)
